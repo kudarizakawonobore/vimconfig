@@ -26,7 +26,7 @@ set nowrap
 " 挿入モードに入るとき、前回の挿入モードにおけるIMEの状態を復元する
 set t_SI+=[<r
 " 挿入モードを出るとき、現在のIMEの状態を保存し、IMEをオフにする
-set t_EI+=[<t[<s
+set t_EI+=[<0t[<s
 " vim 終了時、IMEをOFFにする
 set t_te+=[<0t[<s
 set ttimeoutlen=100
@@ -56,12 +56,11 @@ call dein#add('Shougo/dein.vim')
 " Add or remove your plugins here:
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
+call dein#add('scrooloose/nerdtree')
+call dein#add('jistr/vim-nerdtree-tabs')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
-call dein#add('scrooloose/nerdtree')
-call dein#add('jistr/vim-nerdtree-tabs')
 
 " Required:
 call dein#end()
@@ -83,4 +82,4 @@ let file_name = expand("%")
 if has('vim_starting') &&  file_name == ""
    autocmd VimEnter * NERDTree ./
 endif
-:command NERDTree NERDTreeTabsToggle
+:command! NERDTree NERDTreeTabsToggle
