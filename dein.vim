@@ -31,6 +31,14 @@ set t_EI+=[<0t[<s
 set t_te+=[<0t[<s
 set ttimeoutlen=100
 
+" ()[]{} の自動補完を行う
+"inoremap [ [<Space><Space>]<Left><Left>
+"inoremap {<Enter> {}<Left><CR><Esc><S-o>
+"inoremap ${ ${}<Left>
+"inoremap $( $()<Left>
+"inoremap " ""<Left>
+"inoremap ' ''<Left>
+
 " ファイル形式の検出の有効化する
 " ファイル形式別プラグインのロードを有効化する
 " ファイル形式別インデントのロードを有効化する
@@ -59,6 +67,7 @@ call dein#add('Shougo/neosnippet-snippets')
 call dein#add('scrooloose/nerdtree')
 call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('mrk21/yaml-vim')
+call dein#add('tpope/vim-endwise')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
