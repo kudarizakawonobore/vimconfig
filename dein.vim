@@ -11,6 +11,7 @@ set fileformats=unix,dos,mac
 syntax enable
 autocmd BufNewFile,BufRead *.pdf.thinreports set filetype=ruby
 autocmd BufNewFile,BufRead *.js.coffee set filetype=javascript
+autocmd BufRead,BufNewFile *.gradle setfiletype groovy
 
 " 挿入モードでTABを挿入するとき、代わりに適切な数の空白を使う
 set expandtab
@@ -30,14 +31,6 @@ set t_EI+=[<0t[<s
 " vim 終了時、IMEをOFFにする
 set t_te+=[<0t[<s
 set ttimeoutlen=100
-
-" ()[]{} の自動補完を行う
-"inoremap [ [<Space><Space>]<Left><Left>
-"inoremap {<Enter> {}<Left><CR><Esc><S-o>
-"inoremap ${ ${}<Left>
-"inoremap $( $()<Left>
-"inoremap " ""<Left>
-"inoremap ' ''<Left>
 
 " ファイル形式の検出の有効化する
 " ファイル形式別プラグインのロードを有効化する
@@ -92,4 +85,24 @@ let file_name = expand("%")
 if has('vim_starting') &&  file_name == ""
    autocmd VimEnter * NERDTree ./
 endif
-:command! NERDTree NERDTreeTabsToggle
+":command! NERDTree NERDTreeTabsToggle
+nnoremap <silent><C-n> :NERDTreeTabsToggle<CR>
+
+" mycmd
+" sed word
+nnoremap <expr> + ':%s /\<' . expand('<cword>') . '\>/'
+" insert Cr
+nnoremap <CR> o<ESC>
+" very magic mode
+nnoremap / /\v
+vnoremap / /\v
+cnoremap %s/ %smagic/
+cnoremap \>s/ \>smagic/
+nnoremap :g/ :g/\v
+nnoremap :g// :g//
+nnoremap <C-K> :%smagic/
+" move on insert mode 
+"inoremap <C-L> <Right>
+"inoremap <C-J> <Down>
+"inoremap <C-H> <Left>
+"inoremap <C-K> <Up>
