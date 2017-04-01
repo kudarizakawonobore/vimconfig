@@ -93,14 +93,19 @@ nnoremap <silent><C-n> :NERDTreeTabsToggle<CR>
 nnoremap <expr> + ':%s /\<' . expand('<cword>') . '\>/'
 " insert Cr
 nnoremap <CR> o<ESC>
+
+" 単語検索で次の候補に移動しないようにする
+nnoremap * *N
+nnoremap # #N
+
 " very magic mode
-nnoremap / /\v
-vnoremap / /\v
-cnoremap %s/ %smagic/
-cnoremap \>s/ \>smagic/
-nnoremap :g/ :g/\v
-nnoremap :g// :g//
-nnoremap <C-K> :%smagic/
+"nnoremap / /\v
+"vnoremap / /\v
+"cnoremap %s/ %smagic/
+"cnoremap \>s/ \>smagic/
+"nnoremap :g/ :g/\v
+"nnoremap :g// :g//
+"nnoremap <C-K> :%smagic/
 " move on insert mode 
 "inoremap <C-L> <Right>
 "inoremap <C-J> <Down>
