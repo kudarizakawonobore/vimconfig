@@ -12,6 +12,7 @@ syntax enable
 autocmd BufNewFile,BufRead *.pdf.thinreports set filetype=ruby
 autocmd BufNewFile,BufRead *.js.coffee set filetype=javascript
 autocmd BufRead,BufNewFile *.gradle setfiletype groovy
+autocmd BufRead,BufNewFile *.vue setfiletype javascript
 
 " 挿入モードでTABを挿入するとき、代わりに適切な数の空白を使う
 set expandtab
