@@ -59,6 +59,7 @@ call dein#begin(expand('/usr/local/lib/dein'))
 call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
+call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('scrooloose/nerdtree')
@@ -92,6 +93,13 @@ if has('vim_starting') &&  file_name == ""
 endif
 ":command! NERDTree NERDTreeTabsToggle
 nnoremap <silent><C-n> :NERDTreeTabsToggle<CR>
+
+" Settings Neosnippet
+let g:neocomplete#enable_at_startup = 1
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory = '/usr/local/etc/myvim/vimconfig/snippet'
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 " mycmd
 " sed word
