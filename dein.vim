@@ -31,7 +31,10 @@ set t_SI+=[<r
 set t_EI+=[<0t[<s
 " vim 終了時、IMEをOFFにする
 set t_te+=[<0t[<s
-set ttimeoutlen=100
+set ttimeoutlen=10
+
+" 自動で折り畳みをしない
+set foldlevel=100
 
 " ファイル形式の検出の有効化する
 " ファイル形式別プラグインのロードを有効化する
@@ -99,6 +102,8 @@ nnoremap <CR> o<ESC>
 " 単語検索で次の候補に移動しないようにする
 nnoremap * *N
 nnoremap # #N
+
+set nu
 
 " very magic mode
 "nnoremap / /\v
