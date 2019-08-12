@@ -13,6 +13,7 @@ autocmd BufNewFile,BufRead *.pdf.thinreports set filetype=ruby
 autocmd BufNewFile,BufRead *.js.coffee set filetype=javascript
 autocmd BufRead,BufNewFile *.gradle setfiletype groovy
 autocmd BufRead,BufNewFile *.vue setfiletype javascript
+autocmd BufRead,BufNewFile *.diag setfiletype dot
 
 " 挿入モードでTABを挿入するとき、代わりに適切な数の空白を使う
 set expandtab
@@ -67,6 +68,7 @@ call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('mrk21/yaml-vim')
 call dein#add('tpope/vim-endwise')
 call dein#add('fatih/vim-go')
+call dein#add('tpope/vim-surround')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })

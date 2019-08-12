@@ -10,4 +10,26 @@ snippet csv
 		:header-rows: 1
 		:stub-columns: 1
 
-  
+snippet list
+	.. list-table::
+		:header-rows: 1
+		:stub-columns: 1
+		:widths: 10 30 40 40
+		
+		* - No
+			- 概要
+			- 詳細
+			- 解決策
+		
+		* - 
+			- 
+			- 
+			- 
+
+
+
+snippet rep
+  .. |${1:name}| replace:: 
+
+snippet img
+  .. |${1:name}| image:: /_static/img/${2:path}
