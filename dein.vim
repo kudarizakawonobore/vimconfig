@@ -115,6 +115,8 @@ nnoremap # #N
 
 set nu
 
+let g:go_version_warning = 0
+
 " very magic mode
 "nnoremap / /\v
 "vnoremap / /\v
